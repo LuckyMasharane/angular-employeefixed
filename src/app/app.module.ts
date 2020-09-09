@@ -14,10 +14,10 @@ import { HelloComponent } from './hello.component';
 import { EmployeeComponent } from './employee/employee.component';
 import { DialogComponent } from './dialog/dialog.component';
 import { DepartmentComponent } from './department/department.component';
-import { AppRoutingMadule } from './app-routing/app-routing.module';
+import { AppRoutingModule } from './app-routing/app-routing.module';
 
 @NgModule({
-  imports:      [ BrowserModule, FormsModule, MatCardModule, MatButtonModule,  MatGridListModule, AppRoutingMadule ],
+  imports:      [ BrowserModule, FormsModule, MatCardModule, MatButtonModule,  MatGridListModule, AppRoutingModule ],
   declarations: [ AppComponent, HelloComponent, EmployeeComponent, DialogComponent, DepartmentComponent ],
   entryComponents:[ DialogComponent ],
   bootstrap:    [ AppComponent ],
