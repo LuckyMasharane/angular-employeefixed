@@ -15,10 +15,11 @@ import { EmployeeComponent } from './employee/employee.component';
 import { DialogComponent } from './dialog/dialog.component';
 import { DepartmentComponent } from './department/department.component';
 import { AppRoutingModule } from './app-routing/app-routing.module';
+import { ProjectsComponent } from './projects/projects.component';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule, MatCardModule, MatButtonModule,  MatGridListModule, AppRoutingModule ],
-  declarations: [ AppComponent, HelloComponent, EmployeeComponent, DialogComponent, DepartmentComponent ],
+  declarations: [ AppComponent, HelloComponent, EmployeeComponent, DialogComponent, DepartmentComponent, ProjectsComponent ],
   entryComponents:[ DialogComponent ],
   bootstrap:    [ AppComponent ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
