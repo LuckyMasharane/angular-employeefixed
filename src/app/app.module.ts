@@ -12,10 +12,11 @@ import { AppComponent } from './app.component';
 import { HelloComponent } from './hello.component';
 import { EmployeeComponent } from './employee/employee.component';
 import { DialogComponent } from './dialog/dialog.component';
+import { DepartmentComponent } from './department/department.component';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule, MatCardModule, MatButtonModule,  MatGridListModule],
-  declarations: [ AppComponent, HelloComponent, EmployeeComponent, DialogComponent ],
+  declarations: [ AppComponent, HelloComponent, EmployeeComponent, DialogComponent, DepartmentComponent ],
   entryComponents:[ DialogComponent ],
   bootstrap:    [ AppComponent ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
