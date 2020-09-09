@@ -11,5 +11,12 @@ export class DepartmentComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  department =[
+    {depName:"IT"},
+    {depName:"HR"},
+    {depName:"Marketing"},
+    {depName:"Sales"},
+    {depName:"Printing"},
+    {depName:"Engineering"}
+  ]
 }
