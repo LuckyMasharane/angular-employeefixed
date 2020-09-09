@@ -12,11 +12,11 @@ export class DepartmentComponent implements OnInit {
   ngOnInit() {
   }
   department =[
-    {depName:"IT", depId:"01",depEmpCount:10},
-    {depName:"HR", depId:"01",depEmpCount:5},
-    {depName:"Marketing", depId:"01",depEmpCount:15},
-    {depName:"Sales", depId:"01",depEmpCount:5},
-    {depName:"Printing", depId:"01",depEmpCount:5},
-    {depName:"Engineering", depId:"01",depEmpCount:10}
+    { depName:"IT", depId:"01",depEmpCount:10 },
+    { depName:"HR", depId:"03",depEmpCount:5 },
+    { depName:"Marketing", depId:"04",depEmpCount:15 },
+    { depName:"Sales", depId:"05",depEmpCount:5 },
+    { depName:"Printing", depId:"06",depEmpCount:5 },
+    { depName:"Engineering", depId:"02",depEmpCount:10 }
   ]
 }
