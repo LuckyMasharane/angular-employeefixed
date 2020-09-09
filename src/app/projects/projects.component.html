@@ -1,5 +1,5 @@
 <div>
-  <ul>
-    <li>Project</li>
+  <ul *ngFor="let projects of projects">
+    <li>{{projects.projectName}}</li>
   </ul>
 </div>
