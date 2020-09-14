@@ -28,26 +28,26 @@ export class EmployeeComponent implements OnInit {
   ]
 
     
-  openDialog(empName) {
-    const dialogRef = this.dialog.open(DialogComponent,{
-      data:{
-        message: 'Are you sure want to delete?',
-        buttonText: {
-          ok: 'Delete',
-          cancel: 'No'
-        }
-      }
-    });
+  // openDialog(empName) {
+  //   const dialogRef = this.dialog.open(DialogComponent,{
+  //     data:{
+  //       message: 'Are you sure want to delete?',
+  //       buttonText: {
+  //         ok: 'Delete',
+  //         cancel: 'No'
+  //       }
+  //     }
+  //   });
 
-    dialogRef.afterClosed().subscribe((confirmed: boolean) => {
-      if (confirmed) {
-        const index = this.employees.indexOf(empName,0)
-        if (index >-1) {
-          this.employees.splice(index,1);
-        }
-      }
-    });
-  }
+  //   dialogRef.afterClosed().subscribe((confirmed: boolean) => {
+  //     if (confirmed) {
+  //       const index = this.employees.indexOf(empName,0)
+  //       if (index >-1) {
+  //         this.employees.splice(index,1);
+  //       }
+  //     }
+  //   });
+  // }
 
 
 }
