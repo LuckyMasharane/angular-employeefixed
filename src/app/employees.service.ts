@@ -18,9 +18,7 @@ export class EmployeesService {
   ]
   constructor() { }
 
-
   getAllEmployee() {
     return this.employeesList;
   }
-
 }
