@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
-import { DialogComponent } from '../dialog/dialog.component';
+// import { MatDialog } from '@angular/material/dialog';
+// import { DialogComponent } from '../dialog/dialog.component';
 
 @Component({
   selector: 'app-employee',
@@ -9,7 +9,7 @@ import { DialogComponent } from '../dialog/dialog.component';
 })
 export class EmployeeComponent implements OnInit {
 
- constructor(public dialog: MatDialog) {}
+//  constructor(public dialog: MatDialog) {}
 
   ngOnInit() {
   }
