@@ -17,6 +17,7 @@ import { DepartmentComponent } from './department/department.component';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { ProjectsComponent } from './projects/projects.component';
 import { WelcomePageComponent } from './welcome-page/welcome-page.component';
+import { EmployeesService } from './employees.service';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule, MatCardModule, MatButtonModule,  MatGridListModule, AppRoutingModule ],
@@ -24,7 +25,7 @@ import { WelcomePageComponent } from './welcome-page/welcome-page.component';
   entryComponents:[ DialogComponent ],
   bootstrap:    [ AppComponent ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
-  providers: []
+  providers: [EmployeesService]
 
 })
 export class AppModule { }
