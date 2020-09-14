@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { EmployeesService } from '../employees.service';
 // import { MatDialog } from '@angular/material/dialog';
 // import { DialogComponent } from '../dialog/dialog.component';
 
@@ -9,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EmployeeComponent implements OnInit {
 
-//  constructor(public dialog: MatDialog) {}
+  constructor(private _employeeService: EmployeesService) {}
 
   ngOnInit() {
   }
@@ -49,5 +50,7 @@ export class EmployeeComponent implements OnInit {
   //   });
   // }
 
-
+  get EmployeList() {
+    return this._employeeService.getAllEmployee();
+  }
 }
