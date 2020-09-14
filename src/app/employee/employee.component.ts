@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import { MatDialog } from '@angular/material/dialog';
+import { DialogComponent } from '..s/dialog/dialog.component';
 
 @Component({
   selector: 'app-employee',
@@ -8,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EmployeeComponent implements OnInit {
 
-  constructor() { }
+ constructor(public dialog: MatDialog) {}
 
   ngOnInit() {
   }
@@ -26,6 +27,27 @@ export class EmployeeComponent implements OnInit {
     {id:9,empName:"Thabo",empSurname:"Mbatha",empPosition:"Senior Developer",empAge:27,empImage:"https://images.pexels.com/photos/1445527/pexels-photo-1445527.jpeg?cs=srgb&dl=pexels-doug-bolton-1445527.jpg&fm=jpg"}
   ]
 
+    
+  openDialog(empName) {
+    const dialogRef = this.dialog.open(DialogComponent,{
+      data:{
+        message: 'Are you sure want to delete?',
+        buttonText: {
+          ok: 'Delete',
+          cancel: 'No'
+        }
+      }
+    });
+
+    dialogRef.afterClosed().subscribe((confirmed: boolean) => {
+      if (confirmed) {
+        const index = this.employees.indexOf(empName,0)
+        if (index >-1) {
+          this.employees.splice(index,1);
+        }
+      }
+    });
+  }
 
 
 }
