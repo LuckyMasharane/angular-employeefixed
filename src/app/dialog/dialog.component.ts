@@ -25,9 +25,10 @@ export class DialogComponent implements OnInit {
       }
   }
 
-    ngOnInit() {
-    }
-     onConfirmClick(): void {
+
+  ngOnInit() {
+  }
+  onConfirmClick(): void {
     this.dialogRef.close(true);
-    }
+  }
 }
