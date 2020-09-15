@@ -17,9 +17,8 @@ export class UpdateDialogComponent implements OnInit {
   constructor( private _formBuilder: FormBuilder,@Inject(MAT_DIALOG_DATA) private data: any,
    private dialogRef: MatDialogRef<UpdateDialogComponent>,
    private _employeeService: EmployeesService 
-   ) {
- console.log(this.data);
-    }
+   ) { }
+   
   onNoClick(): void {
     this.dialogRef.close();
   }
