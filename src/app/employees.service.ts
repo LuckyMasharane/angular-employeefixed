@@ -4,6 +4,8 @@ import { Employee } from './employee';
 @Injectable()
 export class EmployeesService {
 
+  constructor() { }
+
   employeesList: Employee[] =[
     {id:1, empName:"Vusi",empSurname:"Ngomane",empPosition:"front-end Developer",empAge:19,   empImage:"https://images.pexels.com/photos/1648413/pexels-photo-1648413.jpeg?cs=srgb&dl=pexels-victoria-borodinova-1648413.jpg&fm=jpg"},
     {id:2, empName:"Lucky",empSurname:"Ndlami",empPosition:"Developer",empAge:20,empImage:"https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?cs=srgb&dl=pexels-justin-shaifer-1222271.jpg&fm=jpg"},
@@ -16,9 +18,12 @@ export class EmployeesService {
     {id:8, empName:"Wandile",empSurname:"Nyoni",empPosition:"Developer",empAge:28,empImage:"https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?cs=srgb&dl=pexels-stefan-stefancik-91227.jpg&fm=jpg"},
     {id:9,empName:"Thabo",empSurname:"Mbatha",empPosition:"Senior Developer",empAge:27,empImage:"https://images.pexels.com/photos/1445527/pexels-photo-1445527.jpeg?cs=srgb&dl=pexels-doug-bolton-1445527.jpg&fm=jpg"}
   ]
-  constructor() { }
 
   getAllEmployee() {
     return this.employeesList;
+  }
+  updateEmployee(emp: Employee) {
+    const index = this. employeesList.findIndex(c => c.id === emp.id);
+    this. employeesList[index] = emp;
   }
 }
