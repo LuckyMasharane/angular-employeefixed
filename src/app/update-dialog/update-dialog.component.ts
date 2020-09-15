@@ -12,7 +12,7 @@ import { Validators } from '@angular/forms';
 })
 export class UpdateDialogComponent implements OnInit {
    message: string = "Employee Details"
-    public _contactForm: FormGroup;
+    public contactForm: FormGroup;
 
   constructor( private _formBuilder: FormBuilder,@Inject(MAT_DIALOG_DATA) private data: any,
    private dialogRef: MatDialogRef<UpdateDialogComponent>,
@@ -20,12 +20,12 @@ export class UpdateDialogComponent implements OnInit {
    ) {
  console.log(this.data);
     }
-      onNoClick(): void {
+  onNoClick(): void {
     this.dialogRef.close();
-   }
+  }
    
   ngOnInit() {
-   this._contactForm = this._formBuilder.group({
+   this.contactForm = this._formBuilder.group({
      ID: [this.data.Id],
       empName: [ this.data.empName, [Validators.required]],
       empSurname: [ this.data.empSurname, [Validators.required]],
@@ -34,8 +34,8 @@ export class UpdateDialogComponent implements OnInit {
     });
   }
  onSubmit() {
-     console.log(this._contactForm.value.ID);
-     this._employeeService.updateEmployee(this._contactForm.value);
+     console.log(this.contactForm.value.ID);
+     this._employeeService.updateEmployee(this.contactForm.value);
    this.dialogRef.close();
  }
 }

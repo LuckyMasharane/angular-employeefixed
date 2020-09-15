@@ -18,7 +18,7 @@
               {{employees.empPosition}} , {{employees.empAge}} years
             </mat-card-subtitle>
             <mat-card-actions>
-              <button mat-raised-button color="primary">Update</button>
+              <button mat-raised-button color="primary" (click)="updateDialog(Employee.Id)">Update</button>
               <button mat-raised-button color="warn">Delete</button>
             </mat-card-actions>
           </mat-card>

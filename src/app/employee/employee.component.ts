@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { EmployeesService } from '../employees.service';
-// import { MatDialog } from '@angular/material/dialog';
-// import { DialogComponent } from '../dialog/dialog.component';
+import { MatDialog } from '@angular/material/dialog';
+import { DialogComponent } from '../dialog/dialog.component';
+import {UpdateDialogComponent } from '../update-dialog/update-dialog.component';
+
 
 @Component({
   selector: 'app-employee',
@@ -10,7 +12,7 @@ import { EmployeesService } from '../employees.service';
 })
 export class EmployeeComponent implements OnInit {
 
-  constructor(private _employeeService: EmployeesService) {}
+  constructor(private _employeeService: EmployeesService,public dialog: MatDialog) {}
 
   ngOnInit() {
   }
@@ -29,28 +31,32 @@ export class EmployeeComponent implements OnInit {
   ]
 
     
-  // openDialog(empName) {
-  //   const dialogRef = this.dialog.open(DialogComponent,{
-  //     data:{
-  //       message: 'Are you sure want to delete?',
-  //       buttonText: {
-  //         ok: 'Delete',
-  //         cancel: 'No'
-  //       }
-  //     }
-  //   });
+  openDialog(empName) {
+    const dialogRef = this.dialog.open(DialogComponent,{
+      data:{
+        message: 'Are you sure want to delete?',
+        buttonText: {
+          ok: 'Delete',
+          cancel: 'No'
+        }
+      }
+    });
 
-  //   dialogRef.afterClosed().subscribe((confirmed: boolean) => {
-  //     if (confirmed) {
-  //       const index = this.employees.indexOf(empName,0)
-  //       if (index >-1) {
-  //         this.employees.splice(index,1);
-  //       }
-  //     }
-  //   });
-  // }
+    dialogRef.afterClosed().subscribe((confirmed: boolean) => {
+      if (confirmed) {
+        const index = this.employees.indexOf(empName,0)
+        if (index >-1) {
+          this.employees.splice(index,1);
+        }
+      }
+    });
+  }
 
   get EmployeList() {
     return this._employeeService.getAllEmployee();
+  }
+  updateDialog(id: number) {
+     const EmployeeClass = this._employeeService.getAllEmployee().find(c => c.id === id);
+    let dialogRef = this.dialog.open(UpdateDialogComponent ,{ data: EmployeeClass});
   }
 }
